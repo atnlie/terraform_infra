@@ -16,10 +16,10 @@ resource "docker_image" "nginx" {
 
 resource "docker_container" "nginx" {
   image = docker_image.nginx.image_id
-  name  = "tutorial"
+  name  = var.nginx_container_name
   ports {
     internal = 80
-    external = 8888
+    external = 8000
   }
 
 }
